@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: JWT
+
+jwt:
+  secret: EhykHJ8VmQz9ZqazQ8yqBGbR0U3Vd7Xz+Jw0Lfzavk4B5gP5k7C6lk7DmcuLSBh81sf8P5Ld/kJUzq/70Thsg==
+  expiration-ms: 60000
+
+server:
+  port: 8080
