@@ -19,7 +19,6 @@ import ru.isshepelev.jwt.service.UserService;
 
 @Configuration
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true) // Включаем поддержку аннотаций @PreAuthorize и @Secured
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -37,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
-    // Добавляем PasswordEncoder Bean, если не был определен в вашем коде.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
