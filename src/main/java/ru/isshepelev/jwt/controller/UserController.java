@@ -28,12 +28,12 @@ public class UserController {
     public String hello() {
         return "Hello";
     }
-    // сюда доступ разрешен только user и admin
+
     @GetMapping("/user")
     public String user() {
         return "User";
     }
-    // сюда доступ разрешен только admin
+
     @GetMapping("/admin")
     public String admin() {
         return "Admin";
@@ -56,8 +56,8 @@ public class UserController {
 
         User user = userService.findByUsername(username);
         if (user != null && passwordEncoder.matches(password, user.getPassword())){
-            Role role = user.getRoles(); // Изменили тип на Role.
-            return jwtUtil.generateToken(username, role); // Передаем Role вместо List<String>.
+            Role role = user.getRoles(); 
+            return jwtUtil.generateToken(username, role); 
         }else throw new IllegalArgumentException("Неверное имя пользователя или пароль");
     }
 }
